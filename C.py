@@ -20,6 +20,7 @@ print(aa.y((z,1,'z')))
 
 print('puerca')
 print("pppp")
+print('pepe')
 #el primer print da la clase A
 #el segundo print devolvera true porque se cumple
 #el tercer print devuelve 0 porque le pasas una tupla
