@@ -11,7 +11,6 @@ a = A
 y = a.z
 print(y(a))
 aa = a()
-print(a())
 print(aa is a())
 z = aa.y
 print(z(()))
