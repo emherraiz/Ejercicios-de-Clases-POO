@@ -1,21 +1,21 @@
+import unicodedata
+import sys
 class palindromo:
 
-    def esPalindromo(palabra):
-        comprobar = True
-        izquierda= 0
-        derecha= len(palabra)-1
-
-        while izquierda != derecha:
-            if palabra[izquierda] == palabra[derecha]:
-                izquierda = izquierda + 1
-                derecha = derecha - 1
-            else:
-                comprobar = False
-                break
-
-        if comprobar == True:
-            return True
+    def esPalindromo(x):
+        x=x.lower()
+        x=x.replace(" ","")
+        caracteres=dict.fromkeys(c for c in range(sys.maxunicode) if unicodedata.combining(chr(c)))
+        x_normalizado=unicodedata.normalize("NFD",x)
+        x=x_normalizado.translate(caracteres)
+        longitud=len(x)
+        if longitud%2==0:
+            izquierda=x[:longitud//2]
+            derecha=x[longitud//2:]
+            return izquierda==derecha[::-1]
         else:
-            return False
+            izquierda=x[:longitud//2]
+            derecha=x[longitud//2+1:]
+            return izquierda==derecha[::-1]
 
-print(palindromo.esPalindromo("radar"))
+print(palindromo.esPalindromo("cerda"))
