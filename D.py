@@ -5,18 +5,16 @@ class Logger:
 
     def log(palabra):
         archivo = str(input("Introduce el nombre del archivo al que se va a escribir: "))
-        max_len = 6
         f = open(archivo, "w")
-        for i in range(max_len):
-            if i == 0:
-                f.write("--Start log-- \n")
+        for i in range(1,6):
+            if i == 1:
+                f.write(f'--Start log--\nprimera {palabra}\n')
             else:
-                f.write(palabra)
-                f.write("\n")
+                f.write(f'{i}º {palabra}\n')
 
         f.write("--End log: ")
-        f.write(str(max_len))
+        f.write(str("5"))
         f.write(" log(s)-- ")
         f.close()
 
-Logger.log("palabra")
+Logger.log("llamada")
