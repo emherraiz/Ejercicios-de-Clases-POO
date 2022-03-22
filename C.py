@@ -20,6 +20,12 @@ print(a().y((a,)))
 print(A.y(aa, (a,z)))
 print(aa.y((z,1,'z')))
 
+print(f'\nA = {A}')
+print(f'a = {a}')
+print(f'y = {y}')
+print(f'aa = {aa}')
+print(f'z = {z}')
+
 
 
 #el primer print da la clase A
