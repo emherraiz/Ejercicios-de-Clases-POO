@@ -1,20 +1,29 @@
-from asyncio.log import logger
+class Test:
+    def metodo(self, linea, resultado_final):
+        return resultado_final + linea
+
+class logger:
+
+    def primera_linea(self):
+        return '--Start log--'
+
+    def linea_intermedia(self, numero_de_llamada):
+        return f'\n{numero_de_llamada}a llamada'
+
+    def ultima_linea(self, tamaño):
+        return f'\n--End log: {tamaño} log(s)--'
 
 
-class Logger:
+def llamadas_a_una_funcion(tamaño):
+    llamada = Test()
+    proceso = logger()
+    resultado_final = proceso.primera_linea()
+    for i in range(tamaño):
+        resultado_final = llamada.metodo(proceso.linea_intermedia(i+1), resultado_final)
 
-    def log(palabra):
-        archivo = str(input("Introduce el nombre del archivo al que se va a escribir: "))
-        f = open(archivo, "w")
-        for i in range(1,6):
-            if i == 1:
-                f.write(f'--Start log--\nprimera {palabra}\n')
-            else:
-                f.write(f'{i}º {palabra}\n')
+    resultado_final = llamada.metodo(proceso.ultima_linea(tamaño), resultado_final)
 
-        f.write("--End log: ")
-        f.write(str("5"))
-        f.write(" log(s)-- ")
-        f.close()
+    return resultado_final
 
-Logger.log("llamada")
+
+print(llamadas_a_una_funcion(5))
