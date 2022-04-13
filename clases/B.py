@@ -1,7 +1,7 @@
 
 import unicodedata
 import sys
-class palindromo:
+class palindromo2:
     def __init__(self,palabra):
         self.palabra = palabra
     def test(self):
@@ -38,7 +38,7 @@ class palindromo:
             derecha=x[longitud//2+1:]
             return izquierda==derecha[::-1]
 
-p=palindromo("atar a la rata")
+p=palindromo2("atar a la rata")
 print(p.test())
-p=palindromo("capullo")
+p=palindromo2("capullo")
 print(p.test())
